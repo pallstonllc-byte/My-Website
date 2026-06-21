@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
   const prN = prStages.length;
   const prRoot = document.getElementById("pr-list");
-  const prContainer = document.querySelector(".pr-roadmap");
 
   const prRows = [], prMarkers = [], prFills = [];
 
@@ -126,7 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     prRows.push(row);
     prMarkers.push(marker);
+
+    row.addEventListener("click", function() { prAnimateTo(i / (prN - 1), 900); });
   });
+
+  prRows[0].classList.add("pr-reached");
 
   function prEase(t) {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -143,3 +146,37 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 0; i < prN; i++) {
       const reached = logical >= i - 0.001;
       const isFinal = i === prN - 1;
+      prMarkers[i].classList.toggle("pr-active", reached && i !== 0 && !isFinal);
+      prMarkers[i].classList.toggle("pr-final", reached && isFinal);
+      prRows[i].classList.toggle("pr-reached", reached);
+      prRows[i].classList.toggle("pr-final-reached", reached && isFinal);
+    }
+    for (let i = 0; i < prFills.length; i++) {
+      const h = Math.max(0, Math.min(1, logical - i)) * 100;
+      prFills[i].style.height = h + "%";
+    }
+  }
+
+  function prAnimateTo(target, duration) {
+    if (prRaf) cancelAnimationFrame(prRaf);
+    const start = prProgress;
+    const delta = target - start;
+    const t0 = performance.now();
+    function step(now) {
+      const t = Math.min(1, (now - t0) / duration);
+      prProgress = start + delta * prEase(t);
+      prRender(prProgress);
+      if (t < 1) prRaf = requestAnimationFrame(step);
+      else { prProgress = target; prRender(prProgress); }
+    }
+    prRaf = requestAnimationFrame(step);
+  }
+
+  prRender(0);
+  setTimeout(function() { prAnimateTo(1, 3200); }, 700);
+
+  document.getElementById("pr-replay-btn").addEventListener("click", function() {
+    prAnimateTo(0, 500);
+    setTimeout(function() { prAnimateTo(1, 3200); }, 600);
+  });
+});
