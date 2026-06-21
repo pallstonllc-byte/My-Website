@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pallston LLC — Execute. Analyze. Transform.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<header class="site-nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="nav-logo"><img id="navLogo" src="assets/pallston-logo-white.png" alt="Pallston LLC"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#pillars">Execute</a>
+      <a href="#analyze">Analyze</a>
+      <a href="#transform">Transform</a>
+      <a href="#about">About</a>
+      <a href="#capability">Capability</a>
+      <a href="#insights">Insights</a>
+      <div class="nav-cta mobile-cta">
+        <a href="#contact" class="btn btn-primary" style="padding:12px 20px; font-size:14px;">Start a Conversation</a>
+      </div>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost" style="padding:10px 20px; font-size:13px;">Start a Conversation</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="nav-scrim" id="navScrim"></div>
+
+<!-- ============ PROGRESS RAIL (signature element) ============ -->
+<div class="rail" id="rail">
+  <div class="rail-track"></div>
+  <div class="rail-item" data-target="pillars"><span class="rail-label">Execute</span><span class="rail-dot"></span></div>
+  <div class="rail-item" data-target="analyze"><span class="rail-label">Analyze</span><span class="rail-dot"></span></div>
+  <div class="rail-item" data-target="transform"><span class="rail-label">Transform</span><span class="rail-dot"></span></div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-mark" id="heroMark" aria-hidden="true">
+      <svg viewBox="0 0 300 300" id="convergeSvg">
+        <g id="shardE" class="shard">
+          <rect x="0" y="0" width="86" height="86" rx="2" fill="none" stroke="#0FA18E" stroke-width="2"/>
+        </g>
+        <g id="shardA" class="shard">
+          <circle cx="43" cy="43" r="43" fill="none" stroke="#0FA18E" stroke-width="2"/>
+        </g>
+        <g id="shardT" class="shard">
+          <polygon points="43,0 86,86 0,86" fill="none" stroke="#0FA18E" stroke-width="2"/>
+        </g>
+        <g id="pmark" class="pmark">
+          <rect x="118" y="60" width="14" height="120" fill="#0A2342"/>
+          <path d="M118 60 H168 A40 40 0 0 1 168 140 H132" fill="none" stroke="#0A2342" stroke-width="14"/>
+          <rect x="118" y="192" width="14" height="14" fill="#0FA18E"/>
+        </g>
+      </svg>
+    </div>
+
+    <p class="eyebrow" style="color:#5CC7B7;">Virginia · Federal &amp; Commercial Advisory</p>
+    <h1 class="hero-h1">Senior expertise.<br>AI-native delivery.<br><em>No bench required.</em></h1>
+    <p class="hero-sub">Pallston is a four-partner consultancy built to execute programs, analyze data into decisions, and transform operations &mdash; with the speed of a startup and the judgment of sixty years' combined leadership.</p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn btn-primary">Start a Conversation <span class="btn-arrow">&rarr;</span></a>
+      <a href="#capability" class="btn btn-ghost">View Capability Statement</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="stat-num">4</span><span class="label">Founding Partners</span></div>
+      <div class="hero-stat"><span class="stat-num">60+</span><span class="label">Years Combined Experience</span></div>
+      <div class="hero-stat"><span class="stat-num">3</span><span class="label">Service Pillars</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll-cue"><span></span></div>
+</section>
+
+<!-- ============ PILLARS INTRO ============ -->
+<section id="pillars-intro" class="pillars-intro">
+  <div class="wrap">
+    <p class="eyebrow">How We Work</p>
+    <h2>Three disciplines.<br>One delivery team.</h2>
+    <p class="lede" style="max-width:620px; margin-top:20px;">Every engagement at Pallston moves through the same three-part lens &mdash; whichever pillar leads, the other two are never far behind.</p>
+  </div>
+</section>
+
+<!-- ============ PILLAR 01 — EXECUTE ============ -->
+<section id="pillars" class="pillar pillar-execute">
+  <div class="wrap pillar-grid">
+    <div class="pillar-copy">
+      <span class="pillar-index">01</span>
+      <p class="eyebrow">Execute</p>
+      <h2>Programs that ship.<br>Operations that hold.</h2>
+      <p class="lede" style="margin-top:18px;">We take over stalled programs, broken PMOs, and acquisition processes that have lost executive confidence &mdash; and we run them the way they should have been run from day one.</p>
+      <ul class="pillar-list">
+        <li><span class="li-mark"></span>Program &amp; PMO leadership, including interim and recovery roles</li>
+        <li><span class="li-mark"></span>Acquisition strategy, RFP/RFQ support, and contract administration</li>
+        <li><span class="li-mark"></span>Supply chain and operations redesign for measurable efficiency</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline" style="margin-top:32px;">Discuss a Program <span class="btn-arrow">&rarr;</span></a>
+    </div>
+    <div class="pillar-visual">
+      <div class="exec-board">
+        <div class="exec-board-head">
+          <span class="label" style="color:rgba(255,255,255,0.55);">PROGRAM HEALTH</span>
+          <span class="exec-status">ON TRACK</span>
+        </div>
+        <div class="exec-row"><span>Acquisition Strategy</span><div class="exec-bar"><i style="width:100%"></i></div></div>
+        <div class="exec-row"><span>PMO Governance</span><div class="exec-bar"><i style="width:88%"></i></div></div>
+        <div class="exec-row"><span>Vendor Transition</span><div class="exec-bar"><i style="width:64%"></i></div></div>
+        <div class="exec-row"><span>Schedule Recovery</span><div class="exec-bar"><i style="width:41%"></i></div></div>
+        <div class="exec-foot">Milestone delivery rate <strong>95%+</strong> across active engagements</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PILLAR 02 — ANALYZE ============ -->
+<section id="analyze" class="pillar pillar-analyze">
+  <div class="wrap pillar-grid pillar-grid-rev">
+    <div class="pillar-visual">
+      <div class="data-board">
+        <svg viewBox="0 0 360 200" class="data-chart">
+          <line x1="0" y1="170" x2="360" y2="170" stroke="#2A4A6E" stroke-width="1"/>
+          <polyline points="0,150 45,138 90,142 135,108 180,112 225,78 270,82 315,46 360,38" fill="none" stroke="#0FA18E" stroke-width="2.5"/>
+          <circle cx="360" cy="38" r="4" fill="#0FA18E"/>
+          <polyline points="0,160 45,158 90,150 135,148 180,138 225,135 270,128 315,120 360,112" fill="none" stroke="#3F6694" stroke-width="2" stroke-dasharray="4 4"/>
+        </svg>
+        <div class="data-legend">
+          <span><i style="background:#0FA18E"></i>Decision Velocity</span>
+          <span><i style="background:#3F6694"></i>Baseline</span>
+        </div>
+      </div>
+    </div>
+    <div class="pillar-copy">
+      <span class="pillar-index">02</span>
+      <p class="eyebrow">Analyze</p>
+      <h2>Your data has<br>an opinion. We<br>translate it.</h2>
+      <p class="lede" style="margin-top:18px;">Most organizations are data-rich and insight-poor. We build the governance, dashboards, and applied AI that turn information sitting in a warehouse into a decision someone actually makes.</p>
+      <ul class="pillar-list">
+        <li><span class="li-mark"></span>Data strategy, governance frameworks, and architecture roadmaps</li>
+        <li><span class="li-mark"></span>Business intelligence platforms and executive dashboards</li>
+        <li><span class="li-mark"></span>Applied AI pilots and predictive analytics with measurable ROI</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline" style="margin-top:32px;">Discuss Your Data <span class="btn-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PILLAR 03 — TRANSFORM ============ -->
+<section id="transform" class="pillar pillar-transform">
+  <div class="wrap pillar-grid">
+    <div class="pillar-copy">
+      <span class="pillar-index">03</span>
+      <p class="eyebrow">Transform</p>
+      <h2>Modernize before<br>the mandate forces it.</h2>
+      <p class="lede" style="margin-top:18px;">Healthcare, insurance, and infrastructure organizations face the same pressure: legacy systems, new regulation, and a closing window to modernize on their own terms.</p>
+      <ul class="pillar-list">
+        <li><span class="li-mark"></span>Legacy system modernization roadmaps and digital workflow redesign</li>
+        <li><span class="li-mark"></span>Industry-specific transformation for healthcare, insurance &amp; infrastructure</li>
+        <li><span class="li-mark"></span>Emerging technology evaluation and AI adoption strategy</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline" style="margin-top:32px;">Discuss Modernization <span class="btn-arrow">&rarr;</span></a>
+    </div>
+    <div class="pillar-visual">
+      <div class="transform-board">
+        <div class="tx-row tx-old">
+          <span class="label" style="color:#9AA8B0;">LEGACY STATE</span>
+          <div class="tx-block tx-block-old">Manual workflows &middot; siloed systems &middot; compliance gaps</div>
+        </div>
+        <div class="tx-arrow">&darr;</div>
+        <div class="tx-row tx-new">
+          <span class="label" style="color:#0FA18E;">MODERNIZED STATE</span>
+          <div class="tx-block tx-block-new">Integrated platforms &middot; automated controls &middot; audit-ready</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="about">
+  <div class="wrap">
+    <p class="eyebrow">About Pallston</p>
+    <h2 style="margin-top:14px; max-width:680px;">Four practitioners.<br>No bench. No bureaucracy.</h2>
+    <p class="lede" style="max-width:600px; margin-top:20px;">Pallston was founded on a simple bet: that four senior experts, working with AI rather than around it, can deliver what used to take a forty-person team &mdash; without the markup, the management layers, or the junior staff learning on your dime.</p>
+
+    <div class="founder-grid">
+      <div class="founder-card">
+        <span class="label">Managing Partner</span>
+        <h3>Programs &amp; Acquisition</h3>
+        <p>Program and project management, PMO leadership, acquisition and contract management.</p>
+        <span class="founder-pillar">EXECUTE</span>
+      </div>
+      <div class="founder-card">
+        <span class="label">Managing Partner</span>
+        <h3>Data &amp; Analytics</h3>
+        <p>Data science, business intelligence, and dashboard design across regulated industries.</p>
+        <span class="founder-pillar">ANALYZE</span>
+      </div>
+      <div class="founder-card">
+        <span class="label">Managing Partner</span>
+        <h3>Operations &amp; Engineering</h3>
+        <p>Supply chain, operations, environmental and civil engineering leadership.</p>
+        <span class="founder-pillar">EXECUTE / TRANSFORM</span>
+      </div>
+      <div class="founder-card">
+        <span class="label">Managing Partner</span>
+        <h3>Strategy &amp; Industry</h3>
+        <p>Healthcare, insurance, and business administration across public and private sectors.</p>
+        <span class="founder-pillar">TRANSFORM / ANALYZE</span>
+      </div>
+    </div>
+
+    <div class="values-row">
+      <div class="value-item"><h3>Discipline</h3><p>We do what we say, when we say, to the standard we promise.</p></div>
+      <div class="value-item"><h3>Clarity</h3><p>We translate complexity into decisions leadership can act on.</p></div>
+      <div class="value-item"><h3>Integrity</h3><p>We tell clients the truth, including when it is inconvenient.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPABILITY STATEMENT ============ -->
+<section id="capability" class="capability">
+  <div class="wrap cap-grid">
+    <div class="cap-copy">
+      <p class="eyebrow" style="color:#5CC7B7;">For Contracting Officers &amp; Procurement</p>
+      <h2 style="color:var(--white); margin-top:14px;">One page.<br>Everything you need to qualify us.</h2>
+      <p style="color:rgba(255,255,255,0.68); margin-top:18px; max-width:480px;">NAICS codes, certifications, core competencies, and differentiators &mdash; formatted the way a procurement packet expects it, not the way a brochure wants to look.</p>
+      <a href="#" class="btn btn-primary" style="margin-top:30px;">Download Capability Statement (PDF) <span class="btn-arrow">&darr;</span></a>
+    </div>
+    <div class="cap-preview">
+      <div class="cap-doc">
+        <div class="cap-doc-head">
+          <span class="cap-doc-tag">PALLSTON LLC</span>
+          <span class="cap-doc-tag-sub">EXECUTE &bull; ANALYZE &bull; TRANSFORM</span>
+        </div>
+        <div class="cap-doc-line cap-doc-line-lg"></div>
+        <div class="cap-doc-line" style="width:70%"></div>
+        <div class="cap-doc-cols">
+          <div><span class="cap-doc-h">CORE COMPETENCIES</span><div class="cap-doc-line"></div><div class="cap-doc-line" style="width:80%"></div><div class="cap-doc-line" style="width:60%"></div></div>
+          <div><span class="cap-doc-h">DIFFERENTIATORS</span><div class="cap-doc-line"></div><div class="cap-doc-line" style="width:75%"></div><div class="cap-doc-line" style="width:55%"></div></div>
+        </div>
+        <div class="cap-doc-foot">UEI &middot; CAGE &middot; NAICS 541611, 541512, 541330</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSIGHTS ============ -->
+<section id="insights" class="insights">
+  <div class="wrap">
+    <div class="insights-head">
+      <div>
+        <p class="eyebrow">From the Partners</p>
+        <h2 style="margin-top:14px;">Insights</h2>
+      </div>
+      <a href="#" class="btn btn-outline">View All Insights <span class="btn-arrow">&rarr;</span></a>
+    </div>
+    <div class="insight-grid">
+      <a href="#" class="insight-card">
+        <span class="label">Execute</span>
+        <h3>Why most PMO recoveries fail in the first 90 days</h3>
+        <p>The governance fix isn't more process &mdash; it's fewer, clearer decisions made faster.</p>
+      </a>
+      <a href="#" class="insight-card">
+        <span class="label">Analyze</span>
+        <h3>The dashboard nobody opens twice</h3>
+        <p>Why most BI rollouts stall after launch, and the three questions that prevent it.</p>
+      </a>
+      <a href="#" class="insight-card">
+        <span class="label">Transform</span>
+        <h3>Modernizing before the mandate arrives</h3>
+        <p>The regulatory clock in healthcare IT is shorter than most roadmaps assume.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow" style="color:#5CC7B7;">Let's Talk</p>
+      <h2 style="color:var(--white); margin-top:14px;">Tell us what's<br>stalled, or what's next.</h2>
+      <p style="color:rgba(255,255,255,0.65); margin-top:18px; max-width:440px;">Every conversation starts with a Managing Partner &mdash; never an intake form that disappears into a queue.</p>
+      <div class="contact-direct">
+        <div><span class="label" style="color:rgba(255,255,255,0.4);">Email</span><p style="color:var(--white); margin-top:4px;">hello@pallstonllc.com</p></div>
+        <div><span class="label" style="color:rgba(255,255,255,0.4);">Based In</span><p style="color:var(--white); margin-top:4px;">Virginia, USA</p></div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="return false;">
+      <label>Name<input type="text" placeholder="Your name"></label>
+      <label>Organization<input type="text" placeholder="Company or agency"></label>
+      <label>Which pillar fits best?
+        <select>
+          <option>Execute &mdash; Programs &amp; Operations</option>
+          <option>Analyze &mdash; Data &amp; AI</option>
+          <option>Transform &mdash; Modernization</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+      <label>What's the situation?<textarea rows="3" placeholder="A sentence or two is plenty"></textarea></label>
+      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:8px;">Send Message <span class="btn-arrow">&rarr;</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img id="footerLogo" src="assets/pallston-logo-white.png" alt="Pallston LLC" style="height:22px;">
+      <p style="margin-top:14px; color:rgba(255,255,255,0.45); font-size:13px; max-width:280px;">A lean, AI-native consultancy built to execute, analyze, and transform &mdash; without the overhead.</p>
+    </div>
+    <div class="footer-col">
+      <span class="label" style="color:rgba(255,255,255,0.35);">Services</span>
+      <a href="#pillars">Execute</a><a href="#analyze">Analyze</a><a href="#transform">Transform</a>
+    </div>
+    <div class="footer-col">
+      <span class="label" style="color:rgba(255,255,255,0.35);">Company</span>
+      <a href="#about">About</a><a href="#capability">Capability Statement</a><a href="#insights">Insights</a>
+    </div>
+    <div class="footer-col">
+      <span class="label" style="color:rgba(255,255,255,0.35);">Connect</span>
+      <a href="#contact">Contact</a><a href="#">LinkedIn</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>&copy; 2026 Pallston LLC. All rights reserved.</span>
+    <span>EXECUTE &bull; ANALYZE &bull; TRANSFORM</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
