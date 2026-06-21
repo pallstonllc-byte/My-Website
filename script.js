@@ -78,7 +78,6 @@
     });
   });
 })();
-
 document.addEventListener('DOMContentLoaded', function() {
   const prStages = [
     { title: "Legacy State", desc: "Manual workflows, siloed systems, compliance gaps" },
