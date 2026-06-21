@@ -427,7 +427,7 @@ header.site-nav.scrolled{
 
 .pr-list { display: flex; flex-direction: column; }
 
-.pr-stage-row { display: flex; gap: 20px; }
+.pr-stage-row { display: flex; gap: 20px; cursor: pointer; }
 
 .pr-marker-col {
   display: flex;
@@ -505,3 +505,44 @@ header.site-nav.scrolled{
 .pr-stage-row.pr-reached .pr-stage-title { color: var(--navy); }
 .pr-stage-row.pr-reached .pr-stage-desc { color: var(--ink-soft); }
 .pr-stage-row.pr-final-reached .pr-stage-title { color: var(--teal); }
+
+.pr-footer-row { display: flex; justify-content: flex-end; margin-top: 4px; }
+.pr-replay-btn {
+  border: 1px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.pr-replay-btn:hover { background: var(--navy); color: var(--white); }
+
+.pr-side-deco {
+  position: absolute;
+  right: -28px;
+  top: 30px;
+  bottom: 90px;
+  width: 1px;
+  background: var(--hairline);
+  display: none;
+}
+.pr-side-deco .pr-ring {
+  position: absolute; right: -3.5px;
+  width: 7px; height: 7px; border-radius: 50%;
+  border: 1.5px solid #C7C7BE;
+  background: var(--paper);
+}
+.pr-side-deco .pr-ring.pr-r1 { top: 0; }
+.pr-side-deco .pr-ring.pr-r2 { top: 70px; }
+.pr-side-deco .pr-tag {
+  position: absolute; bottom: -22px; right: -54px;
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--ink-soft); display: flex; align-items: center; gap: 6px;
+}
+.pr-side-deco .pr-tag .pr-filled { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+
+@media (min-width: 760px) { .pr-side-deco { display: block; } }
