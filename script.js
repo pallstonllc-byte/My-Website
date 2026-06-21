@@ -78,3 +78,104 @@
     });
   });
 })();
+document.addEventListener('DOMContentLoaded', function() {
+  const prStages = [
+    { title: "Legacy State", desc: "Manual workflows, siloed systems, compliance gaps" },
+    { title: "Assess & Map", desc: "Current-state audit and modernization roadmap definition" },
+    { title: "Redesign", desc: "Digital workflow redesign and system integration planning" },
+    { title: "Modernize", desc: "Platform integration and automation rollout" },
+    { title: "Modernized State", desc: "Integrated platforms, automated controls, audit-ready" },
+  ];
+  const prN = prStages.length;
+  const prRoot = document.getElementById("pr-list");
+
+  const prRows = [], prMarkers = [], prFills = [];
+
+  prStages.forEach((s, i) => {
+    const row = document.createElement("div");
+    row.className = "pr-stage-row";
+    row.dataset.index = i;
+
+    const markerCol = document.createElement("div");
+    markerCol.className = "pr-marker-col";
+
+    const marker = document.createElement("div");
+    marker.className = "pr-marker" + (i === 0 ? " pr-start" : "");
+    marker.innerHTML = '<span class="pr-marker-dot"></span><span class="pr-marker-check">✓</span>';
+    markerCol.appendChild(marker);
+
+    if (i < prN - 1) {
+      const connector = document.createElement("div");
+      connector.className = "pr-connector";
+      const fill = document.createElement("div");
+      fill.className = "pr-fill";
+      connector.appendChild(fill);
+      markerCol.appendChild(connector);
+      prFills.push(fill);
+    }
+
+    const content = document.createElement("div");
+    content.className = "pr-stage-content";
+    content.innerHTML = '<div class="pr-stage-title">' + s.title + '</div><div class="pr-stage-desc">' + s.desc + '</div>';
+
+    row.appendChild(markerCol);
+    row.appendChild(content);
+    prRoot.appendChild(row);
+
+    prRows.push(row);
+    prMarkers.push(marker);
+
+    row.addEventListener("click", function() { prAnimateTo(i / (prN - 1), 900); });
+  });
+
+  prRows[0].classList.add("pr-reached");
+
+  function prEase(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  let prProgress = 0;
+  let prRaf = null;
+  const prPctEl = document.getElementById("pr-pct");
+
+  function prRender(p) {
+    prPctEl.textContent = Math.round(p * 100) + "%";
+    const logical = p * (prN - 1);
+
+    for (let i = 0; i < prN; i++) {
+      const reached = logical >= i - 0.001;
+      const isFinal = i === prN - 1;
+      prMarkers[i].classList.toggle("pr-active", reached && i !== 0 && !isFinal);
+      prMarkers[i].classList.toggle("pr-final", reached && isFinal);
+      prRows[i].classList.toggle("pr-reached", reached);
+      prRows[i].classList.toggle("pr-final-reached", reached && isFinal);
+    }
+    for (let i = 0; i < prFills.length; i++) {
+      const h = Math.max(0, Math.min(1, logical - i)) * 100;
+      prFills[i].style.height = h + "%";
+    }
+  }
+
+  function prAnimateTo(target, duration) {
+    if (prRaf) cancelAnimationFrame(prRaf);
+    const start = prProgress;
+    const delta = target - start;
+    const t0 = performance.now();
+    function step(now) {
+      const t = Math.min(1, (now - t0) / duration);
+      prProgress = start + delta * prEase(t);
+      prRender(prProgress);
+      if (t < 1) prRaf = requestAnimationFrame(step);
+      else { prProgress = target; prRender(prProgress); }
+    }
+    prRaf = requestAnimationFrame(step);
+  }
+
+  prRender(0);
+  setTimeout(function() { prAnimateTo(1, 3200); }, 700);
+
+  document.getElementById("pr-replay-btn").addEventListener("click", function() {
+    prAnimateTo(0, 500);
+    setTimeout(function() { prAnimateTo(1, 3200); }, 600);
+  });
+});
