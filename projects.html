@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PALLSTON LLC</title>
+  <!-- No OG tags, no description — intentionally minimal -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0A2342;
+      font-family: 'Inter', system-ui, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── Blank state (no valid hash) ── */
+    #blank {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #0A2342;
+    }
+
+    /* ── Project viewer ── */
+    #viewer {
+      display: none;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    #viewer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: #061829;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    #viewer-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      color: #0FA18E;
+      text-transform: uppercase;
+    }
+
+    #open-new {
+      font-size: 11px;
+      color: rgba(197,213,232,0.5);
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    #open-new:hover {
+      color: #C5D5E8;
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shown when no valid hash is present — completely blank -->
+  <div id="blank"></div>
+
+  <!-- Shown only when a valid secret hash is present -->
+  <div id="viewer">
+    <div id="viewer-bar">
+      <span id="viewer-title"></span>
+      <a id="open-new" href="#" target="_blank">Open in new tab ↗</a>
+    </div>
+    <iframe id="deck-frame" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    // ── Secret route map ──────────────────────────────────────────────────────
+    // Keys are the URL hashes (case-insensitive).
+    // src: path to the HTML file relative to this page (must be in same deploy).
+    // label: shown in the slim top bar.
+    const ROUTES = {
+      'careone':   { src: 'CareOne_dc.html',  label: 'CareOne · Project Deck'  },
+      'execboard': { src: 'ExecBoard_dc.html', label: 'ExecBoard · Project Deck' },
+      'geoshield': { src: 'GeoShield_dc.html', label: 'GeoShield · Project Deck' },
+    };
+    // ─────────────────────────────────────────────────────────────────────────
+
+    function route() {
+      const hash = (location.hash || '').replace('#', '').toLowerCase().trim();
+      const match = ROUTES[hash];
+
+      const blank  = document.getElementById('blank');
+      const viewer = document.getElementById('viewer');
+      const frame  = document.getElementById('deck-frame');
+      const title  = document.getElementById('viewer-title');
+      const link   = document.getElementById('open-new');
+
+      if (match) {
+        blank.style.display  = 'none';
+        viewer.style.display = 'flex';
+        frame.src  = match.src;
+        title.textContent = match.label;
+        link.href  = match.src;
+        document.title = match.label + ' · PALLSTON LLC';
+      } else {
+        blank.style.display  = 'flex';
+        viewer.style.display = 'none';
+        frame.src  = '';
+        document.title = 'PALLSTON LLC';
+      }
+    }
+
+    // Run on load and on any hash change
+    window.addEventListener('load', route);
+    window.addEventListener('hashchange', route);
+  </script>
+
+</body>
+</html>
